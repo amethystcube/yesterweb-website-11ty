@@ -88,10 +88,11 @@ scrollbar
 html,
 body {
   font-family: var(--font-body);
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   width: 100%;
   height: 100%;
+  max-width: 84rem;
 }
 
 html {
@@ -104,7 +105,6 @@ body {
   background-image: var(--body-background-image);
   background-attachment: fixed;
   color: var(--color-body-text);
-  max-width: 70rem;
   display: flex;
   flex-wrap: wrap;
 }
@@ -193,7 +193,6 @@ summary {
   margin: 0 auto;
   padding: 0.5rem 1rem;
   width: 100%;
-  max-width: 48rem;
   background-color: var(--color-background);
   border-block-end: none;
   font-size: 1.125rem;
@@ -283,6 +282,7 @@ body::-webkit-scrollbar-thumb {
   /* == element styles */
   body {
     display: block;
+    padding-inline-end: 4rem;
   }
   h1 {
     margin: initial;
@@ -291,8 +291,8 @@ body::-webkit-scrollbar-thumb {
 
   /* == global styles */
   .content {
-    padding: 1.25rem 3rem;
-    flex: 1 0 38rem;
+    padding: 1.25rem 4rem;
+    flex: 1 1 0;
     max-width: unset;
   }
 
