@@ -1,0 +1,117 @@
+---
+title: Radio
+description: Listen to The Yesterweb's radio.
+layout: base.njk
+---
+<style>
+    .np {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .now-playing {
+        color: red;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .on-air {
+        width: 6.25rem;
+    }
+
+    #shoutbox {
+        width: 100%;
+        height: 25rem;
+        border: none;
+    }
+
+    #MusesRadioPlayer-HTML5-player-0 {
+        margin: 0 auto;
+    }
+</style>
+
+<div class="display-flex" style="align-items:center;">
+    <img src="https://yesterweb.org/img/radio.gif" alt=""/>
+    <img class="on-air" src="https://yesterweb.org/img/on-air.gif" alt=""/>
+</div>
+
+<p class="notice-solid">
+    Do you make music or know someone who does?
+    <a href="https://tally.so/r/wQKNy8" target="_blank">Submit their music</a>
+    to be on our live radio!
+</p>
+<p>
+    The Yesterweb Live Radio is a radio that focuses on showcasing
+    independent music, interviews and talk shows.
+</p>
+<p>
+    You can listen to
+    <a href="https://radio.yesterweb.org/public/1/podcast/1ec91d1a-44c0-6090-9ff3-8731e65c5c4a/episodes">podcasts
+        from the radio</a>
+    as well!
+</p>
+<!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+<script src="https://hosted.muses.org/mrp.js"></script>
+<script>
+    MRP.insert({
+        url: "https://radio.yesterweb.org/radio/8000/radio.mp3",
+        codec: "mp3",
+        volume: 100,
+        autoplay: false,
+        jsevents: true,
+        buffering: 0,
+        title: "Yesterweb Live Radio",
+        wmode: "transparent",
+        skin: "bintang",
+        width: 300,
+        height: 113,
+    });
+</script>
+<!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+<div class="np">
+    <section class="now-playing" id="main" ng-app="app" ng-controller="MainController as vm">
+        <h4>Now Playing:</h4>
+        <marquee>
+            <div class="display"></div>
+        </marquee>
+    </section>
+    <noscript>Javascript is required to view the "now playing" data.</noscript>
+</div>
+<ul>
+    <li>
+        <a href="https://radio.yesterweb.org/radio/8000/radio.mp3" target="_blank">Direct radio
+            stream</a>
+    </li>
+    <li>
+        <a href="https://www.muses.org/setup" target="_blank">Media player setup</a>
+    </li>
+</ul>
+<h2>Yesterweb Radio Chat</h2>
+<iframe id="shoutbox" src="https://yesterweb.ishoutbox.com"></iframe>
+</div>
+</main>
+</div>
+<script>
+    setInterval(getMetaData, 500);
+
+    function getMetaData() {
+        $.ajax({
+            type: "GET",
+            url: "https://radio.yesterweb.org/api/nowplaying/yesterweb_live_radio",
+            dataType: "json",
+            success: function (result, status, xhr) {
+                //console.log('success');
+                $(".display").html(
+                    result["now_playing"]["song"]["title"] +
+                    " - " +
+                    result["now_playing"]["song"]["artist"]
+                );
+            },
+            error: function (xhr, status, error) {
+                //console.log(status);
+                //console.log(error);
+            },
+        });
+    }
+</script>

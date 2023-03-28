@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ site.title }}
+      {% if title %}
+        - {{ title }}
+      {% endif %}
+    </title>
+    <!-- favicon and themes -->
+    <link rel="icon" href="/img/laptop.gif" type="image/gif"/>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- open graph tags -->
+    <meta property="og:url" content="{{ page.url }}"/>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+    <meta
+    property="og:image" content="https://yesterweb.org/img/og/yesterweb-ss.png"/>
+    <!-- analytics -->
+    <script data-goatcounter="https://yesterweb.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <div class="headbar">
+      <a href="/" class="logo">
+        <img src="/img/logo.svg" alt="Yesterweb logo">
+      </a>
+    </div>
+    <div class="display-flex">
+      <header>
+        <nav>
+          <ul>
+            {% for item in nav.items %}
+              <li>
+                <a href="{{ item.url }}" {% if item.url===page.url %} aria-current="page" {% endif %}>{{ item.name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+        {% if page.url === "/" %}
+          <ul class="buttons display-flex">
+            <li>{% button "/img/buttons/button-forum.png", "https://forum.yesterweb.org/", "_blank" %}Yesterweb Forum{% endbutton %}</li>
+            <li>{% button "/img/buttons/button-yesterlinks.png", "https://forum.yesterweb.org/", "_blank" %}Yesterlinks Directory{% endbutton %}</li>
+            <li>{% button "/img/buttons/button-zine.png", "https://zine.yesterweb.org/", "_blank" %}Zine{% endbutton %}</li>
+            <li>{% button "/img/buttons/button-radio.png", "/radio", "_blank" %}Radio{% endbutton %}</li>
+            <li>{% button "/img/buttons/button-mastodon.png", "https://social.yesterweb.org", "_blank" %}Mastodon Instance{% endbutton %}</li>
+            <li>{% button "/img/buttons/button-cafe.png", "https://cafe.yesterweb.org", "_blank" %}Mozilla Hubs Cafe{% endbutton %}</li>
+            <li>{% button "/img/buttons/Yesterweb_88x31.gif", "" %}Yesterweb 88x31 button by neonriser.neocities.org{% endbutton %}</li>
+            <li>{% button "/img/buttons/noweb32.gif", "/no-to-web3", "_blank" %}No to Web3{% endbutton %}</li>
+            <li>{% button "/img/buttons/stamp-frames.gif", "http://lu.tiny-universes.net/", "_blank" %}frames are actually an
+              important tool and you should feel good about using them if they work for your purpose. they aren't obselete, they're
+              accessible for amateur webmasters.{% endbutton %}</li>
+            <li>{% button "/img/buttons/stamp-yrownwebsite.png", "http://lu.tiny-universes.net/", "_blank" %}maybe you should make
+              your own website - cool{% endbutton %}</li>
+          </ul>
+        {% endif %}
+      </header>
+      <div class="content">
+        <main>
+          <header>
+            <h1>
+              {% if page.url === "/" %}The Yesterweb
+              {% else %}
+                {{ title }}
+              {% endif %}
+            </h1>
+          </header>
+          {{ content | safe }}
+        </main>
+      </div>
+      <script>
+        /* Break up long URLs
+      https://css-tricks.com/better-line-breaks-for-long-urls/ */
+        function formatUrl(url) { // Split the URL into an array to distinguish double slashes from single slashes
+          var doubleSlash = url.split('//')
+          // Format the strings on either side of double slashes separately
+          var formatted = doubleSlash.map(
+            str =>
+            // Insert a word break opportunity after a colon
+            str
+            .replace(/(?<after>:)/giu, '$1<wbr>')
+              // Before a single slash, tilde, period, comma, hyphen, underline, question mark, number sign, or percent symbol
+            .replace(/(?<before>[/~.,\-_?#%])/giu, '<wbr>$1')
+              // Before and after an equals sign or ampersand
+            .replace(/(?<beforeAndAfter>[=&])/giu, '<wbr>$1<wbr>')
+              // Reconnect the strings with word break opportunities after double slashes
+          ).join('//<wbr>')
+          return formatted;
+        }
+        var urls = document.querySelectorAll(".url");
+        for (let index = 0; index < urls.length; index++) {
+          const element = urls[index];
+          element.innerHTML = formatUrl(element.textContent);
+        }
+      </script>
+    </body>
+</html>

@@ -1,0 +1,151 @@
+---
+title: Manifesto
+description: Read manifestos written by members of The Yesterweb.
+layout: base.njk
+---
+<style>
+    ul.manifesto {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .manifesto li a {
+        font-size: 20px;
+        font-family: "Courier New";
+        color: white;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .manifesto li a:is(:hover, :focus) {
+        color: black;
+        background-color: white;
+    }
+
+
+    #random-manifesto {
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+    body {
+        counter-reset: commitment;
+    }
+
+    #yw-manifesto {
+        line-height: 1.1em;
+        font-size: 1.1em;
+    }
+
+    #yw-manifesto h3 {
+        counter-increment: commitment;
+    }
+
+    #yw-manifesto h3::before {
+        content: counter(commitment) ". ";
+    }
+</style>
+<section id="yw-manifesto">
+    <h2>Manifesto for a New Web, 1st Edition</h2>
+    <p>
+        This is a set of <b>three core commitments</b> derived
+        from the practical experiences of the Yesterweb staff after two
+        years of community organization. They concentrate what we have
+        learned and how we operate into a general template that can be
+        applied to any community at a foundational level. We propose these
+        commitments as the basis of unity for those individuals or groups
+        who wish to move in the same direction, while allowing a diversity
+        of focus, interests, and missions. They are neither rules nor
+        guidelines: they are expectations that are upheld by all
+        participants, to the best of their ability, who believe in
+        building a new culture for the web.
+    </p>
+    <h3>The commitment to social responsibility and
+        partisanship:</h3>
+    <p>
+        Safety and self-defense are a basic necessity of any
+        community, which includes the recognition that it is
+        impossible to accommodate all people in the same social space
+        due to the inevitability of antagonistic beliefs. Diversity of
+        opinion is respected up until certain bounds that reflect
+        oppressive intentions such as discrimination against age, sex,
+        gender, class, nation/race/ethnicity, religion, or disability.
+        When these conflicts inevitably appear, the community must
+        strive to understand the situation and take the side of the
+        oppressed at any cost. In cases where it is ambiguous whether
+        the harm is intentional or accidental, an investigation
+        through dialogue is necessary to determine malice or
+        ignorance, as ignorance can be resolved with education.
+    </p>
+    <h3>The commitment to collective well-being and personal
+        growth:</h3>
+    <p>
+        Sustainable amounts of selflessness and sacrifice, ideally
+        from all individuals, are required to build a healthy
+        community. Building and maintaining a new culture requires a
+        consistent social effort as well. We should be mindful of
+        collective health, taking compassionate consideration of the
+        personal growth of everyone (actively or passively) involved
+        in any situation. In our communication we should train our
+        ability to listen and to empathize, patiently striving for
+        unity and dialogue rather than division and debate, and
+        approaching conflict with the intention of resolution. It is
+        important that the community does not create goals purely out
+        of opposition or antagonism toward something, and instead
+        works in a positive and creative manner, toward building
+        solutions either in individual or collective practice.
+    </p>
+    <h3>The commitment to rehumanizing social relations and
+        reversing the process of social alienation:</h3>
+    <p>
+        The development of information technology capital has further
+        disintegrated our social being, but being social is a mental
+        necessity. We are left with the burden of re-learning the way
+        we relate to each other and rebuilding our social bonds in a
+        way that treats everyone as equals. This includes unlearning
+        dehumanizing behaviors such as treating others as potential
+        sources of profit/assets or romantic/sexual objects without
+        knowledge or consent, and establishing rules to demarcate
+        separate spaces in which all participants are aware and do
+        consent (if such spaces are deemed necessary by the
+        community). We should question the impact of our environment
+        on our behavior, and carefully consciensciously transform that
+        environments so that a better culture and humanity can
+        flourish.
+    </p>
+</section>
+<hr />
+<img src="https://yesterweb.org/img/painterscroll.gif" style="float:right;" />
+<p>
+    A manifesto is a published declaration of intentions, motives,
+    and/or views.
+</p>
+<p>
+    Read what other people are saying, or
+    <a href="https://tally.so/r/w2jgk9">submit your own</a> to be
+    featured on this page.
+</p>
+<h2>Collection</h2>
+<ul class="manifesto">
+    {% for item in manifestos.items %}
+    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+  {% endfor %}
+</ul>
+</div>
+</main>
+</div>
+<script>
+    var manifestoBtn = document.createElement("button");
+    manifestoBtn.textContent = "Open a random manifesto in a new tab";
+    manifestoBtn.type = "button";
+
+    manifestoBtn.addEventListener("click", function () {
+        var manifestos = document.querySelectorAll(".manifesto li a");
+        var randomNum = Math.floor(Math.random() * manifestos.length);
+        var randomLink = manifestos[randomNum];
+        console.log(randomLink);
+        window.open(randomLink, "_blank");
+    });
+
+    document.querySelector(".manifesto").previousElementSibling.insertAdjacentElement("afterend", manifestoBtn);
+</script>

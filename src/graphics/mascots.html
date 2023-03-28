@@ -1,0 +1,88 @@
+---
+title: Mascots
+description: Mascots for The Yesterweb created by community members.
+layout: base.njk
+---
+<p>These mascots were designed by the people of our community!</p>
+
+                <div class="gallery cf">
+                    <div><img src="/img/mascots/dgd.png"></div>
+                    <div><img src="/img/mascots/sien.png"></div>
+                    <div>
+                        <img src="/img/mascots/mas1.png" />
+                    </div>
+                    <div>
+                        <img src="/img/mascots/mas2.png" />
+                    </div>
+                    <div>
+                        <img src="/img/mascots/spideys.png" />
+                    </div>
+                    <div>
+                        <img src="/img/mascots/unknown.png" />
+                    </div>
+                    <div>
+                        <a href="https://picrew.me/secret_image_maker/DxMKznva3ebeaAs5" target="_blank">
+                            <img src="/img/mascots/Nett.png" /></a>
+                    </div>
+                    <div>
+                        <img src="/img/mascots/MASCOT.png" />
+                    </div>
+                    <div>
+                        <img src="/img/mascots/yesterwebtrio.png" />
+                    </div>
+                    <div>
+                        <img src="/img/mascots/mascot-peach.png" />
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+        .gallery {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 5px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .gallery>div {
+            position: relative;
+            float: left;
+            padding: 5px;
+        }
+
+        .gallery>div>img {
+            width: 300px;
+            transition: 0.1s transform;
+            transform: translateZ(0);
+            /* hack */
+        }
+
+        .gallery>div:hover {
+            z-index: 1;
+        }
+
+        .gallery>div:hover>img {
+            transform: scale(1.8, 1.8);
+            transition: 0.3s transform;
+        }
+
+        .gallery>div:hover>a img {
+            transform: scale(1.8, 1.8);
+            transition: 0.3s transform;
+        }
+
+        .cf:before,
+        .cf:after {
+            display: table;
+            content: "";
+            line-height: 0;
+        }
+
+        .cf:after {
+            clear: both;
+        }
+    </style>

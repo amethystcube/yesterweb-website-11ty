@@ -1,0 +1,90 @@
+---
+title: Webring Members
+description: View the members of the Yesterweb webring.
+layout: base.njk
+---
+<style>
+    #webring-member-list {
+      padding: 0;
+      list-style: none;
+    }
+    #num-sites {
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
+    .webring-member {
+      margin-block-end: 1em;
+    }
+
+    .webring-member > span {
+      display: block;
+    }
+  </style>
+  <p><a href="/webring/">Webring</a> || <a href="/webring/surf">Surf</a></p>
+  <p>
+    There are currently <span id="num-sites">{{ webring.length }}</span> sites in the ring.
+  </p>
+  <ul id="webring-member-list">
+    {% for site in webring | reverse %}
+    <li class="webring-member">
+      <span><strong>Name:</strong> <span class="webring-name">{{ site.name }}</span></span>
+      <span><strong>URL:</strong> <a href="https://example.org" class="webring-url">{{ site.url }}</a></span>
+      <span><strong>Owner:</strong> <span class="webring-owner">{{ site.owner }}</span></span>
+  </li>
+  {% endfor %}
+  </ul>
+</main>
+</div>
+</div>
+<script>
+  function appendData(data) {
+  var webringTemplate = document.getElementById("webring-member-html");
+  var memberList = document.getElementById("webring-member-list");
+  var numSitesSpan = document.getElementById("num-sites");
+  var numSites = data.length;
+
+numSitesSpan.innerHTML = numSites;
+
+memberList.textContent = "";
+
+// list webring members in reverse chronological order (newest to oldest)
+for (var i = numSites - 1; i >= 0; i--) {
+    // retrieve template html
+    var webringMember = webringTemplate.content.cloneNode(true);
+
+    // set name and owner
+    webringMember.querySelector(".webring-name").textContent = data[i].name;
+    webringMember.querySelector(".webring-owner").textContent = data[i].owner;
+    
+    // set url
+    webringMember.querySelector(".webring-url").textContent = data[i].url;
+    webringMember.querySelector(".webring-url").href = data[i].url;
+    
+    // add to page
+    memberList.appendChild(webringMember);
+}
+}
+
+function getWebringMembers() {
+  fetch("https://webring.yesterweb.org/webring.json")
+.then(function (response) {
+  return response.json();
+})
+.then(function (data) {
+  appendData(data);
+})
+.catch(function (err) {
+  console.error(err);
+});
+}
+
+getWebringMembers();
+</script>
+<template id="webring-member-html">
+<li class="webring-member">
+    <span><strong>Name:</strong> <span class="webring-name"></span></span>
+    <span><strong>URL:</strong> <a href="https://example.org" class="webring-url">https://example.org</a></span>
+    <span><strong>Owner:</strong> <span class="webring-owner"></span></span>
+</li>
+</template>

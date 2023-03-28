@@ -1,0 +1,121 @@
+---
+title: Gemini
+description: The Yesterweb Gemini proxy.
+layout: base.njk
+---
+<style>
+    dd>p:first-of-type {
+        margin-block-start: 0;
+    }
+
+    pre {
+        word-wrap: break-word;
+    }
+</style>
+<dl>
+    <dt>What is Gemini?</dt>
+    <dd>
+        Gemini is a webspace that uses a protocol other than
+        <code>HTTP</code>, the one you are probably most familiar with.
+        This means you need a special browser to view websites that use
+        it. There are other protocols like Gemini that you may have heard
+        of, such as Gopher and Finger. Many refer to these spaces as the
+        "smallweb", and essentially are stripped-down text-based websites.
+    </dd>
+    <dt>What can I do on Gemini?</dt>
+    <dd>
+        On Gemini, you can create your own text-only website, called a
+        <b>capsule</b>. You can put whatever you like on there, and share
+        it with others who use Gemini. You can also read other people's
+        websites, and 'surf' by clicking links, much like the old web.
+    </dd>
+
+    <dt>How can I view Gemini capsules?</dt>
+    <dd>
+        You will need a Gemini browser.
+        <a href="https://github.com/skyjake/lagrange/releases/tag/v1.9.3" target="_blank">Lagrange</a>
+        is a popular one avaliable on Linux, Mac, and Windows, but you can
+        check out
+        <a href="https://gemini.circumlunar.space/clients.html" target="_blank">list of other Gemini clients</a>
+        to find one that works for you.
+    </dd>
+    <dt>
+        What if I don't want to install a whole browser just for Gemini?
+    </dt>
+    <dd>
+        You can use a
+        <a href="https://yesterweb.org/gemini.html" target="_blank">web proxy</a>
+        to view sites or just browse, but you won't be able to edit your
+        site this way.
+    </dd>
+
+    <dt>How do I make my own Gemini capsule?</dt>
+    <dd>
+        You can sign up by accessing the following URL from a
+        Gemini-compatible browser:
+        <code class="url">gemini://cities.yesterweb.org/signup</code>. Enter your
+        desired username and password, which you will need to edit your
+        site.
+    </dd>
+
+    <dt>How do I edit or upload to my Gemini capsule?</dt>
+    <dd>
+        <p>
+            Gemini pages are text files saved with the
+            <code>.gmi</code> extension. You can upload your files using a
+            browser at
+            <code class="url">gemini://cities.yesterweb.org/filemanager</code>.
+            Otherwise, you'll need file management program with WebDAV
+            support. Some recommendations are
+            <a href="https://winscp.net/eng/index.php" target="_blank">WinSCP</a>
+            or
+            <a href="https://www.putty.org/" target="_blank">PuTTY</a> for
+            Windows. If you're on Mac or Linux, you can make a connection to
+            the server right from your file manager:
+        </p>
+        <ul>
+            <li>Linux: <code>File > Connect to Server</code></li>
+            <li>Mac: <code>Go > Connect to Server</code></li>
+        </ul>
+        <p>
+            Read the
+            <a href="https://gemini.yesterweb.org/welcome.gmi" target="_blank">WebDAV connection instructions</a>
+            for the correct hostname and port. Once you make a connection,
+            your 'homepage' will be a file named index.gmi. You can create
+            folders and more .gmi files as additional pages.
+        </p>
+    </dd>
+
+    <dt>How can I add a guestbook to my Gemini capsule?</dt>
+    <dd>
+        <p>
+            You can use the <code>{{GUESTBOOK}}</code> command to display
+            your guestbook comments wherever you like.
+        </p>
+        <p>
+            Then, create a link to:
+            <code class="url">gemini://cities.yesterweb.org/guestbook/USERNAME</code> making
+            sure to replace your username in the link.
+        </p>
+    </dd>
+
+    <dt>How do you format text on Gemini?</dt>
+    <dd>
+        Gemini formatting is called "gemtext" markup. You can read a
+        <a href="https://gemini.circumlunar.space/docs/gemtext.gmi" target="_blank">complete gemtext guide</a>
+        or reference the handy guide below.
+    </dd>
+</dl>
+<section aria-labelledby="gemtext-guide">
+    <h2 id="gemtext-guide">Gemtext Guide</h2>
+    <h3>Links</h3>
+    <pre>=> gemini://cities.yesterweb.org<br />=> https://yesterweb.org</pre>
+    <h3>Headings</h3>
+    <pre># Heading<br />## Sub-heading<br />### Sub-sub-heading</pre>
+    <h3>Lists</h3>
+    <pre>* Item<br />* Item<br />* Item<br /></pre>
+    <h3>Quotes</h3>
+    <pre>> This is a quote.</pre>
+    <h3>Preformatted</h3>
+    <pre>```This is preformatted text.```</pre>
+</section>

@@ -1,0 +1,140 @@
+---
+title: Reclaiming the Internet
+description: The homepage for The Yesterweb.
+permalink: /
+layout: base.njk
+---
+
+<style>
+    section[aria-labelledby="whats-new"] article:first-of-type {
+        border: 1px solid var(--color-body-text);
+        padding: 0.5rem;
+        box-shadow: -0.25em 0.25em 0 0 var(--color-body-text);
+    }
+
+    section[aria-labelledby="whats-new"] article:not(:first-of-type) {
+        display: none;
+    }
+
+    section[aria-labelledby="whats-new"] article h3 {
+        margin: 0;
+        color: currentColor;
+    }
+
+    .buttons {
+        margin-inline-end: .5rem;
+        padding: 0;
+        display: none;
+        list-style-type: none;
+        gap: 0.25em;
+    }
+
+    @media only screen and (min-width: 64em) {
+        .buttons {
+            display: flex;
+        }
+    }
+</style>
+<div class="flex">
+    <p>Welcome to the Yesterweb site! This site is dedicated to a
+        community—and a larger movement—about
+        <a href="/manifesto">how the internet has changed</a>. We are
+        creating, discovering, and enjoying websites and digital spaces.
+    </p>
+    <div class="notice-border">
+        <a href="https://guestbook.yesterweb.org/">Sign our guestbook<br /> <img src="/img/guestbook.gif" alt="" /></a>
+    </div>
+</div>
+{% button "/img/buttons/button-yesterweb.png" %}An 88x31 for The Yesterweb{% endbutton %}</h2>
+<section aria-labelledby="whats-new">
+    <h2 id="whats-new">What's new?</h2>
+    <article>
+        <h3>December '22</h3>
+        <p>
+            Enter your submission into the next
+            <a href="https://zine.yesterweb.org/issue-05/" target="_blank">Zine</a>! The theme is
+            <em>alt</em>
+            and the deadline is January 8th.
+        </p>
+    </article>
+    <article>
+        <h3>September '22</h3>
+        <p>
+            It's spOOky season! You are cordially invited to submit a handmade Halloween-themed webpage for virtual
+            trick-or-treaters to visit. We encourage you to have a little "treat" the visitor can take back with them
+            like a special
+            badge or blinkie.
+        </p>
+        <p>
+            When you have created your page, submit the link
+            <a href="https://tally.so/r/mODKQa" target="_blank">here</a>!
+            <em>(Deadline: October 18th)</em>
+        </p>
+    </article>
+    <article>
+        <h3>June '22</h3>
+        <p>
+            The next
+            <strong>Yesterweb Zine</strong>
+            topic has been
+            announced! The deadline for submission is
+            <strong>8/14/22</strong>. You can register and find more
+            information
+            <a href="https://zine.yesterweb.org/issue-04/" target="_blank">here</a>.
+        </p>
+        <p>
+            <a href="/about/">Updated our about page</a>
+            with a new section
+            for
+            <a href="/about/index.html#etiquette">Etiquette</a>, our
+            rules, and other stuff!
+        </p>
+    </article>
+    <article>
+        <h3>April '22</h3>
+        <p>
+            <a href="https://links.yesterweb.org/" target="_blank">Our searchable link database</a>
+            was recently
+            <strong>updated</strong>
+            and now you can sort by
+            new/old and "recommend" (upvote) links! Submit your favorite
+            site
+            <a href="https://links.yesterweb.org/submit-a-link.php">here</a>.
+        </p>
+        <p>
+            <a href="https://radio.yesterweb.org/public/1/podcast/1ec91d1a-44c0-6090-9ff3-8731e65c5c4a/episodes"
+                target="_blank">
+                Episode 02 - Interview with Michelle (Cinni)</a>
+            is out now!
+        </p>
+        <p>
+            Our latest zine is live, you can view it
+            <a href="/zine/issue-03/" target="_blank">here</a>! The deadline
+            for the next issue has not been decided yet.
+        </p>
+    </article>
+    <article>
+        <h3>March '22</h3>
+        <p>
+            We now have a guestbook! If you'd like to leave a message, you
+            can find our guestbook
+            <a href="https://guestbook.yesterweb.org" target="_blank">here</a>.
+        </p>
+        <p>
+            We have added a new webpage showcasing
+            <a href="/graphics/pubmats.html">shareable graphics about the internet and small web spaces</a>. You can
+            submit your own materials
+            <a href="https://forms.yesterweb.org/index.php/922467" target="_blank">here</a>.
+        </p>
+    </article>
+    <article>
+        <h3>February '22</h3>
+        <p>
+            We are currently accepting music from Yesterfolk musicians!
+            Submit your music
+            <a href="https://forms.yesterweb.org/index.php/451443?lang=en" target="_blank">here</a>, and we'll play it
+            on the
+            <a href="/radio/" target="_blank">radio</a>!
+        </p>
+    </article>
+</section>

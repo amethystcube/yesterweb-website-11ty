@@ -1,0 +1,11 @@
+# ignore installed packages
+node_modules
+
+# ignore built site
+_site
+
+# ignore configuration files
+.DS_Store
+
+# ignore themes (work-in-progress)
+src/css/themes/

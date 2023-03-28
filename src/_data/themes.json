@@ -1,0 +1,37 @@
+{
+    "items": [
+        {
+            "value": "default",
+            "label": "Default"
+        },
+        {
+            "value": "old-school",
+            "label": "Old School"
+        },
+        {
+            "value": "auzzie-jay",
+            "label": "Auzzie Jay"
+        },
+        {
+            "value": "cinni-light",
+            "label": "Cinni (Light)"
+        },
+        {
+            "value": "cinni-dark",
+            "label": "Cinni (Dark)"
+        },
+        {
+            "value": "madness-light",
+            "label": "Madness (Light)"
+        },
+        {
+            "value": "madness-dark",
+            "label": "Madness (Dark)"
+        },
+        {
+            "value": "sadness",
+            "label": "Sadness"
+        }
+        
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "items": [
+        {
+            "name": "Home",
+            "url": "/"
+        },
+        {
+            "name": "Community",
+            "url": "/community"
+        },
+        {
+            "name": "Zine",
+            "url": "https://zine.yesterweb.org"
+        },
+        {
+            "name": "Webring",
+            "url": "/webring"
+        },
+        {
+            "name": "Radio",
+            "url": "/radio"
+        },
+        {
+            "name": "Manifesto",
+            "url": "/manifesto"
+        },
+        {
+            "name": "Pubmats",
+            "url": "/graphics/pubmats"
+        },
+        {
+            "name": "About",
+            "url": "/about"
+        },
+        {
+            "name": "Sitemap",
+            "url": "/sitemap"
+        }
+    ]
+}
