@@ -33,9 +33,14 @@ layout: base.njk
         .buttons {
             display: flex;
         }
+
+        #welcome-message {
+            flex-wrap: nowrap;
+            gap: 1rem;
+        }
     }
 </style>
-<div class="flex">
+<div id="welcome-message" class="display-flex">
     <p>Welcome to the Yesterweb site! This site is dedicated to a
         community—and a larger movement—about
         <a href="/manifesto">how the internet has changed</a>. We are
@@ -48,6 +53,10 @@ layout: base.njk
 {% button "/img/buttons/button-yesterweb.png" %}An 88x31 for The Yesterweb{% endbutton %}</h2>
 <section aria-labelledby="whats-new">
     <h2 id="whats-new">What's new?</h2>
+    <article>
+        <h3>March '23</h3>
+        <p>The webring is no longer accepting new entries; you should start your own! <a href="https://forum.yesterweb.org/viewtopic.php?p=4611">Check the forum</a> for more information (including a link to other webrings!).</p>
+    </article>
     <article>
         <h3>December '22</h3>
         <p>

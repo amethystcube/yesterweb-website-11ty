@@ -291,7 +291,7 @@ body::-webkit-scrollbar-thumb {
 
   /* == global styles */
   .content {
-    padding: 1.25rem 4rem;
+    padding: 2rem 5rem;
     flex: 1 1 0;
     max-width: unset;
   }
@@ -312,7 +312,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   body .display-flex > header {
-    padding-inline-end: 4rem;
+    padding-inline-end: 4vw;
     flex: 0 0 20rem;
     position: relative;
   }
